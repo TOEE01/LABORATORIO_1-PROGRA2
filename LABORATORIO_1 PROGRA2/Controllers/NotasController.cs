@@ -16,18 +16,7 @@ namespace LABORATORIO_1_PROGRA2.Controllers
             return View();
         }
 
-        //public ActionResult NotaFinal()
-        //{
-        //    using (consultaEntities2 db = new consultaEntities2())
-        //    {
-        //        var ultimanota = db.Set<tblNotasEstudiantes>().OrderByDescending(x => x.id).FirstOrDefault();
-
-        //        ViewBag.periodo1 = CalcularPeriodo(ultimanota.lab1, ultimanota.parcial1);
-        //        ViewBag.periodo2 = CalcularPeriodo(ultimanota.lab2, ultimanota.parcial2);
-        //        ViewBag.periodo3 = CalcularPeriodo(ultimanota.lab3, ultimanota.parcial3);
-        //        return View(ultimanota);
-        //    }
-        //}
+       
 
         public ActionResult Resultado()
         {
@@ -39,7 +28,7 @@ namespace LABORATORIO_1_PROGRA2.Controllers
                 ViewBag.periodo2 = CalcularPeriodo(ultimaNota.lab2, ultimaNota.parcial2);
                 ViewBag.periodo3 = CalcularPeriodo(ultimaNota.lab3, ultimaNota.parcial3);
 
-                return View();
+                return View(ultimaNota);
             }
         }
         public ActionResult GestionNotas()
@@ -111,14 +100,14 @@ namespace LABORATORIO_1_PROGRA2.Controllers
         }
 
         //Guardar las notas
-        private void GuardarNotas(String estudiante, decimal lab1, decimal lab2, decimal lab3, decimal par1, decimal par2, decimal par3, decimal notaGlobal)
+        private void GuardarNotas(String nombre, decimal lab1, decimal lab2, decimal lab3, decimal par1, decimal par2, decimal par3, decimal notaGlobal)
         {
             try
             {
                 using (consultaEntities2 db = new consultaEntities2())
                 {
                     var notas = new tblNotasEstudiantes();
-                    notas.nombre = estudiante;
+                    notas.nombre = nombre;
                     notas.lab1 = lab1;
                     notas.lab2 = lab2;
                     notas.lab3 = lab3;
