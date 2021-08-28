@@ -13,10 +13,10 @@ namespace LABORATORIO_1_PROGRA2.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class consultaEntities2 : DbContext
+    public partial class consultaEntities3 : DbContext
     {
-        public consultaEntities2()
-            : base("name=consultaEntities2")
+        public consultaEntities3()
+            : base("name=consultaEntities3")
         {
         }
     

@@ -4,7 +4,8 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="lab1" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="lab2" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="lab3" Type="Decimal" Precision="18" Scale="0" />
@@ -12,9 +13,8 @@
     <Property Name="parcial2" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="parcial3" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="nota" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityContainer Name="consultaEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="consultaEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tblNotasEstudiantes" EntityType="Self.tblNotasEstudiantes" />
   </EntityContainer>
 </Schema>

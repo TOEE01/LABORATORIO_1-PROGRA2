@@ -20,7 +20,7 @@ namespace LABORATORIO_1_PROGRA2.Controllers
 
         public ActionResult Resultado()
         {
-            using (consultaEntities2 db = new consultaEntities2())
+            using (consultaEntities3 db = new consultaEntities3())
             {
                 var ultimaNota = db.Set<tblNotasEstudiantes>().OrderBy(x => x.id).FirstOrDefault();
 
@@ -33,7 +33,7 @@ namespace LABORATORIO_1_PROGRA2.Controllers
         }
         public ActionResult GestionNotas()
         {
-            using (consultaEntities2 db = new consultaEntities2())
+            using (consultaEntities3 db = new consultaEntities3())
             {
                 var lista = db.tblNotasEstudiantes.ToList();
                 return View(lista);
@@ -100,11 +100,11 @@ namespace LABORATORIO_1_PROGRA2.Controllers
         }
 
         //Guardar las notas
-        private void GuardarNotas(String nombre, decimal lab1, decimal lab2, decimal lab3, decimal par1, decimal par2, decimal par3, decimal notaGlobal)
+        private void GuardarNotas(String nombre, decimal lab1, decimal lab2, decimal lab3, decimal par1, decimal par2, decimal par3, decimal nota)
         {
             try
             {
-                using (consultaEntities2 db = new consultaEntities2())
+                using (consultaEntities3 db = new consultaEntities3())
                 {
                     var notas = new tblNotasEstudiantes();
                     notas.nombre = nombre;
@@ -114,7 +114,7 @@ namespace LABORATORIO_1_PROGRA2.Controllers
                     notas.parcial1 = par1;
                     notas.parcial2 = par2;
                     notas.parcial3 = par3;
-                    notas.nota = notaGlobal;
+                    notas.nota = nota;
                     db.tblNotasEstudiantes.Add(notas);
                     db.SaveChanges();
                 }

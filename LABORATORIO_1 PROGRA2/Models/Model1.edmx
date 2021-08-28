@@ -4,12 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="consultaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="consultaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblNotasEstudiantes">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
           <Property Name="lab1" Type="decimal" Precision="18" Scale="0" />
           <Property Name="lab2" Type="decimal" Precision="18" Scale="0" />
           <Property Name="lab3" Type="decimal" Precision="18" Scale="0" />
@@ -17,13 +18,11 @@
           <Property Name="parcial2" Type="decimal" Precision="18" Scale="0" />
           <Property Name="parcial3" Type="decimal" Precision="18" Scale="0" />
           <Property Name="nota" Type="decimal" Precision="18" Scale="0" />
-          <Property Name="nombre" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="consultaModelStoreContainer">
           <EntitySet Name="tblNotasEstudiantes" EntityType="Self.tblNotasEstudiantes" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="consultaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -31,7 +30,8 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="lab1" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="lab2" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="lab3" Type="Decimal" Precision="18" Scale="0" />
@@ -39,9 +39,8 @@
           <Property Name="parcial2" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="parcial3" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="nota" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="consultaEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="consultaEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tblNotasEstudiantes" EntityType="Self.tblNotasEstudiantes" />
         </EntityContainer>
       </Schema>
@@ -49,19 +48,19 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="consultaModelStoreContainer" CdmEntityContainer="consultaEntities2">
+        <EntityContainerMapping StorageEntityContainer="consultaModelStoreContainer" CdmEntityContainer="consultaEntities3">
           <EntitySetMapping Name="tblNotasEstudiantes">
             <EntityTypeMapping TypeName="consultaModel.tblNotasEstudiantes">
               <MappingFragment StoreEntitySet="tblNotasEstudiantes">
+                <ScalarProperty Name="nota" ColumnName="nota" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="lab1" ColumnName="lab1" />
                 <ScalarProperty Name="lab2" ColumnName="lab2" />
                 <ScalarProperty Name="lab3" ColumnName="lab3" />
                 <ScalarProperty Name="parcial1" ColumnName="parcial1" />
                 <ScalarProperty Name="parcial2" ColumnName="parcial2" />
                 <ScalarProperty Name="parcial3" ColumnName="parcial3" />
-                <ScalarProperty Name="nota" ColumnName="nota" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
