@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaDeInicio.master.cs" Inherits="Laboratorio_1.PaginaDeInicio" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Registro de estudiantes</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Styles/master.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div id= "navbar">
+    <ul>
+        <li><a href="default.aspx">Registro</a></li>
+        <li><a href="calificacion.aspx">Calificacion</a></li>
+        <li><a href="historial.aspx">Histortial</a></li>
+    </ul>
+</div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <div id= footer>
+    <span>Contact@soluciones.com</span>
+    <span>watsapp +503 2221 2211</span>
+    
+</div>
+        </div>
+    </form>
+</body>
+</html>

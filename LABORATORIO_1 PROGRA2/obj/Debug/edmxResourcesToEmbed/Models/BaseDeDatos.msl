@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="consultaModelStoreContainer" CdmEntityContainer="consultaEntities">
+    <EntitySetMapping Name="RegistrodeNotas">
+      <EntityTypeMapping TypeName="consultaModel.RegistrodeNotas">
+        <MappingFragment StoreEntitySet="RegistrodeNotas">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="lab1" ColumnName="lab1" />
+          <ScalarProperty Name="lab2" ColumnName="lab2" />
+          <ScalarProperty Name="lab3" ColumnName="lab3" />
+          <ScalarProperty Name="parcial1" ColumnName="parcial1" />
+          <ScalarProperty Name="parcial2" ColumnName="parcial2" />
+          <ScalarProperty Name="parcial3" ColumnName="parcial3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

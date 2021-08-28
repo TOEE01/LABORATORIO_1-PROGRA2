@@ -1,0 +1,47 @@
+﻿@model LABORATORIO_1_PROGRA2.Models.tblNotasEstudiantes
+@{
+    ViewBag.Title = "NotaFinal";
+}
+
+<h2 style="text-align:center">Nota Final</h2>
+
+<div class="container-fluid" style="border:1px solid black;padding:1.5em; width:32em;font-size:15pt;">
+
+    <label for="nombreEstudiante" style="float:initial;">ESTUDIANTE: </label><br />
+    <label>@Model.nombre</label><br /> <br />
+
+    <div style="float:left;padding-right:1em;">
+        <label>Laboratorio I: </label>
+        <label>@Model.lab1</label><br />
+
+        <label>Laboratorio II: </label>
+        <label>@Model.lab2</label><br />
+
+        <label>Laboratorio III: </label>
+        <label>@Model.lab3</label><br />
+    </div>
+
+    <div style="float: left; padding-right: 1em;">
+        <label>Parcial I: </label>
+        <label>@Model.parcial1</label><br />
+
+        <label>Parcial II: </label>
+        <label>@Model.parcial2</label><br />
+
+        <label>Parcial III: </label>
+        <label>@Model.parcial3</label><br />
+    </div>
+    <div style="float: right; padding-right: 0em;">
+        <label>Periodo I: </label>
+        <label>@ViewBag.periodo1</label><br />
+
+        <label>Periodo II: </label>
+        <label>@ViewBag.periodo2</label><br />
+
+        <label>Periodo III: </label>
+        <label>@ViewBag.periodo3</label><br /><br />
+    </div>
+    <label style="float:initial;width:100%;">NOTA PROMEDIO: @Model.nota</label><br /><br />
+    <button type="submit" class="btn-success" style="float:initial;width:20%">@Html.ActionLink("Regresar", "GestionNotas")</button>
+
+    </div>
