@@ -100,21 +100,21 @@ namespace LABORATORIO_1_PROGRA2.Controllers
         }
 
         //Guardar las notas
-        private void GuardarNotas(String nombre, decimal lab1, decimal lab2, decimal lab3, decimal par1, decimal par2, decimal par3, decimal nota)
+        private void GuardarNotas(String nombreEstudiante, decimal lab1, decimal lab2, decimal lab3, decimal par1, decimal par2, decimal par3, decimal notaGlobal)
         {
             try
             {
                 using (consultaEntities3 db = new consultaEntities3())
                 {
                     var notas = new tblNotasEstudiantes();
-                    notas.nombre = nombre;
+                    notas.nombre = nombreEstudiante;
                     notas.lab1 = lab1;
                     notas.lab2 = lab2;
                     notas.lab3 = lab3;
                     notas.parcial1 = par1;
                     notas.parcial2 = par2;
                     notas.parcial3 = par3;
-                    notas.nota = nota;
+                    notas.nota = notaGlobal;
                     db.tblNotasEstudiantes.Add(notas);
                     db.SaveChanges();
                 }
