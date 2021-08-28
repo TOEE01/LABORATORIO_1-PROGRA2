@@ -16,22 +16,35 @@ namespace LABORATORIO_1_PROGRA2.Controllers
             return View();
         }
 
-        public ActionResult NotaFinal()
-        {
-            using (consultaEntities1 db = new consultaEntities1())
-            {
-                var ultimanota = db.Set<tblNotasEstudiantes>().OrderByDescending(x => x.id).FirstOrDefault();
+        //public ActionResult NotaFinal()
+        //{
+        //    using (consultaEntities2 db = new consultaEntities2())
+        //    {
+        //        var ultimanota = db.Set<tblNotasEstudiantes>().OrderByDescending(x => x.id).FirstOrDefault();
 
-                ViewBag.periodo1 = CalcularPeriodo(ultimanota.lab1, ultimanota.parcial1);
-                ViewBag.periodo2 = CalcularPeriodo(ultimanota.lab2, ultimanota.parcial2);
-                ViewBag.periodo3 = CalcularPeriodo(ultimanota.lab3, ultimanota.parcial3);
-                return View(ultimanota);
+        //        ViewBag.periodo1 = CalcularPeriodo(ultimanota.lab1, ultimanota.parcial1);
+        //        ViewBag.periodo2 = CalcularPeriodo(ultimanota.lab2, ultimanota.parcial2);
+        //        ViewBag.periodo3 = CalcularPeriodo(ultimanota.lab3, ultimanota.parcial3);
+        //        return View(ultimanota);
+        //    }
+        //}
+
+        public ActionResult Resultado()
+        {
+            using (consultaEntities2 db = new consultaEntities2())
+            {
+                var ultimaNota = db.Set<tblNotasEstudiantes>().OrderBy(x => x.id).FirstOrDefault();
+
+                ViewBag.periodo1 = CalcularPeriodo(ultimaNota.lab1, ultimaNota.parcial1);
+                ViewBag.periodo2 = CalcularPeriodo(ultimaNota.lab2, ultimaNota.parcial2);
+                ViewBag.periodo3 = CalcularPeriodo(ultimaNota.lab3, ultimaNota.parcial3);
+
+                return View();
             }
         }
-
-        public ActionResult Calificacion()
+        public ActionResult GestionNotas()
         {
-            using (consultaEntities1 db = new consultaEntities1())
+            using (consultaEntities2 db = new consultaEntities2())
             {
                 var lista = db.tblNotasEstudiantes.ToList();
                 return View(lista);
@@ -102,7 +115,7 @@ namespace LABORATORIO_1_PROGRA2.Controllers
         {
             try
             {
-                using (consultaEntities1 db = new consultaEntities1())
+                using (consultaEntities2 db = new consultaEntities2())
                 {
                     var notas = new tblNotasEstudiantes();
                     notas.nombre = estudiante;

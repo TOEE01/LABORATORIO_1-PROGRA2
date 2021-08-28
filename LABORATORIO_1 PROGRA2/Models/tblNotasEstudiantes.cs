@@ -15,12 +15,12 @@ namespace LABORATORIO_1_PROGRA2.Models
     public partial class tblNotasEstudiantes
     {
         public int id { get; set; }
-        public Nullable<decimal> lab1 { get; set; }
-        public Nullable<decimal> lab2 { get; set; }
-        public Nullable<decimal> lab3 { get; set; }
-        public Nullable<decimal> parcial1 { get; set; }
-        public Nullable<decimal> parcial2 { get; set; }
-        public Nullable<decimal> parcial3 { get; set; }
+        public decimal lab1 { get; set; }
+        public decimal lab2 { get; set; }
+        public decimal lab3 { get; set; }
+        public decimal parcial1 { get; set; }
+        public decimal parcial2 { get; set; }
+        public decimal parcial3 { get; set; }
         public Nullable<decimal> nota { get; set; }
         public string nombre { get; set; }
     }

@@ -7,35 +7,39 @@
 <h2 style="text-align: center"> Cálculo de notas</h2>
 @using (Html.BeginForm("Save", "Notas", FormMethod.Post))
 {
-    <div class="container-fluid" style="border: 1px solid blue; padding:1.6em; width:max-content;">
-        <label for="nombreestudiante" style="float:initial;">Estudiante:</label><br />
-        <input type="text" name="nombre" value="" required style="width:210%; float:initial;" /> <br /><br />
+<div class="container-fluid" style="border: 1px solid blue; padding:6.8em; width:max-content;">
 
-        <div style="float:left;">
-            <label for="Lab1">Laboratorio I:</label><br />
-            <input type="text" name="lab1" value="" required /><br />
+    <label for="nombreestudiante" style="float:initial;">Estudiante:</label><br />
+    <input type="text" name="nombre" value="" required style="width:200%; float:initial;" /> <br /><br />
 
-            <label for="Lab1">Laboratorio II:</label><br />
-            <input type="text" name="lab2" value="" required /><br />
+    <div style="float:left;">
+        <label for="Lab1">Laboratorio I:</label><br />
+        <input type="text" name="lab1" value="" required /><br />
 
-            <label for="Lab1">Laboratorio III:</label><br />
-            <input type="text" name="lab3" value="" required /><br />
-        </div>
+        <label for="Lab1">Laboratorio II:</label><br />
+        <input type="text" name="lab2" value="" required /><br />
 
-        <div>
-            <label for="Par1">Parcial I:</label><br />
-            <input type="text" name="lab1" value="" required /><br />
+        <label for="Lab1">Laboratorio III:</label><br />
+        <input type="text" name="lab3" value="" required /><br />
+    </div>
 
-
-            <label for="Par2">Parcial II:</label><br />
-            <input type="text" name="lab1" value="" required /><br />
+    <div>
+        <label for="Par1">Parcial I:</label><br />
+        <input type="text" name="lab1" value="" required /><br />
 
 
-            <label for="Par3">Parcial III:</label><br />
-            <input type="text" name="lab1" value="" required /><br />
+        <label for="Par2">Parcial II:</label><br />
+        <input type="text" name="lab1" value="" required /><br />
 
-        </div>
+
+        <label for="Par3">Parcial III:</label><br />
+        <input type="text" name="lab1" value="" required /><br />
 
     </div>
+    <br />
+    <br />
+    <button type="submit" class="btn-success" style="float:initial; width:100%;">Calcular</button>
+
+</div>
 }
 
